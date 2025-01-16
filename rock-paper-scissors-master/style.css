@@ -1,0 +1,187 @@
+html, body{
+   background-color: hsl(229, 73%, 14%); 
+}
+h1,h2,h3{
+   font-family: Arial, Helvetica, sans-serif;
+   text-align:center;
+   color:aliceblue;
+   
+  
+   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+h1{
+   font-size: 40px;
+   
+   margin-top:30px;
+   margin-bottom: 0px;
+}
+h2{
+   font-size:32px;
+}
+h3{
+   font-size:24px;
+   padding-bottom: 30px;
+   
+   margin-top: 10px;
+}
+.container{ /*just normal container class*/
+   
+   text-align: center;
+   
+   margin:20px auto 20px auto;
+   max-width: 800px;
+   max-height: 500px;
+   box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.bottons-container {/*new container for buttons using flexboxes*/
+   display: flex;
+   justify-content: space-around; /* Równe odstępy między przyciskami */
+   padding: 0 80px;
+   width: 100%;
+   max-width: 800px;
+   box-sizing: border-box;
+   margin: 20px auto;
+}
+
+.button-container{ /*A cirkle for your game-pick-options*/
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.2);
+   display: flex; /* Ustawienia flexbox dla środka */
+   align-items: center; /* Wyśrodkowanie pionowe */
+   justify-content: center; /* Wyśrodkowanie poziome */
+   cursor: pointer; /* Zmieniamy kursor na kliknięcie */
+   transition: transform 0.2s ease; /* Animacja przy najechaniu */
+}
+
+.rock-button-container { /*currently not using that. I wanted to make this containers look different*/
+   background-color: red;
+}
+.paper-button-container {
+   background-color: yellow;
+}
+.scissors-button-container {
+   background-color: blue;
+}
+
+.button-container.active {/*when button is presed, it is fullfiled yellow to fulline the option*/
+   background-color: yellow;
+ }
+
+.button-container:hover { /*used to make the buttons bigger*/
+   transform: scale(1.1); /* Powiększenie przycisku */
+   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* Mocniejszy cień */
+}
+svg { /*to make sure paper, rock, scissors fit to their containers*/
+   
+   width: 80%; /* Dopasowanie rozmiaru ikony */
+   height: 80%;
+}
+.play-botton{ /*play button activates game*/
+   width:100px;
+   height:50px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size:32px;
+   text-align:center;
+
+}
+.play-botton:hover { /*the same to make it bigger*/
+   transform: scale(1.1); /* Powiększenie przycisku */
+   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* Mocniejszy cień */
+}
+.play-botton.active{ /*the same like for the buttons*/
+   background-color: yellow;
+}
+.subtitle-container{ /*subtitle: you picked, the house picked*/
+   display:flex;
+   flex-direction: row;
+   justify-content: space-around;
+   
+}
+#choices-container{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   margin: 20px auto; /* Wyrównanie do środka w pionie */
+   width: 80%; /* Szerokość całego kontenera */
+   max-width: 600px; /* Maksymalna szerokość */
+}
+.choice-cirkle{ /*class made for show yours and computers choice*/
+   width:150px;
+   height:150px;
+   border-radius: 50%;
+   
+   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+   overflow: hidden; /* Ukrycie części obrazka wykraczającej poza kontener */
+   position: relative; /* Aby umieścić obrazki w środku */
+   display: flex;
+   align-items: center;
+   justify-content: center; /* Centruje obrazki */
+   border: 2px solid #000; /* Ramka dla lepszego wyglądu */
+   background-color: #f0f0f0; /* Opcjonalne tło */
+}
+#your-choice{ /*container for your choice*/
+   width:150px;
+   height:150px;
+   border: 2px solid #000; /* Ramka dla lepszego wyglądu */
+   background-color: #f0f0f0; /* Opcjonalne tło */
+   border-radius:50%;
+
+}
+#computer-choice{ /*container for computer choice*/
+   width:150px;
+   height:150px;
+   border: 2px solid #000; /* Ramka dla lepszego wyglądu */
+   background-color: #f0f0f0; /* Opcjonalne tło */
+   border-radius:50%;
+}
+.choice-circle svg {
+   width: 80%; /* Dopasowanie do rozmiaru rodzica */
+   height: 80%; /* Dopasowanie do rozmiaru rodzica */
+   border-radius: 50%; /* Aby obrazek wyglądał dobrze w okręgu */
+   position: relative; /* Wszystkie obrazki nakładają się na siebie */
+   top: 50%; /* Wyrównanie do środka */
+   left: 40%; /* Wyrównanie do środka */
+   transform: translate(-50%, -50%); /* Wyrównanie względem środka */
+   object-fit: contain; /* Zachowuje proporcje obrazka */
+   
+ }
+ 
+.hidden {
+   display: none; /* hide images */
+}
+.versus{ /*just an image-container to make it look better*/
+   width:200px;
+   height:200px;
+
+   background-color: hsl(229, 73%, 14%); 
+   border-radius: 50%;
+   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+}
+.score-container{
+   width: 120px;
+   height:60px;
+   background-color:rgb(215, 219, 223);
+   text-align:center;
+   margin-top:30px;
+   font-size: 18px;
+   font-weight: bold;
+   
+}
+.flex-row-container{ /*making container with display row*/
+   display: flex;
+   justify-content:space-around;
+   align-items:center;
+}
+.score-container h3{ /*used to use different colours*/
+   color:black;
+}
+.score-container span{
+   margin: 5px 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color:rgb(4, 26, 81);
+   
+
+}
